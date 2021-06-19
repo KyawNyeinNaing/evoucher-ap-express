@@ -1,7 +1,7 @@
 const { promisify } = require("util")
 const jwt = require("jsonwebtoken")
-const User = require("../../models/user.model")
-const AppError = require("../../utils/appError")
+const User = require("../../../models/user.model")
+const AppError = require("../../../utils/appError")
 
 const createToken = id => {
   return jwt.sign(
@@ -75,7 +75,7 @@ exports.signup = async (req, res, next) => {
 
     user.password = undefined
 
-    res.status(201).json({
+    res.status(200).json({
       status: "success",
       token,
       data: {
@@ -93,9 +93,9 @@ exports.protect = async (req, res, next) => {
     let token
     if (
       req.headers.authorization &&
-      req.headers.authorization.startsWith("Bearer")
+      req.headers.authorization.startsWith('Bearer')
     ) {
-      token = req.headers.authorization.split(" ")[1]
+      token = req.headers.authorization.split(' ')[1]
     }
     if (!token) {
       return next(
@@ -117,7 +117,7 @@ exports.protect = async (req, res, next) => {
     const user = await User.findById(decode.id)
     if (!user) {
       return next(
-        new AppError(401, "fail", "This user is no longer exist"),
+        new AppError(401, 'fail', 'This user is no longer exist'),
         req,
         res,
         next,

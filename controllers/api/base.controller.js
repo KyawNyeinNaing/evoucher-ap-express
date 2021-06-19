@@ -1,5 +1,5 @@
-const AppError = require('../utils/appError')
-const APIFeatures = require('../utils/apiFeatures')
+const AppError = require('../../utils/appError')
+const APIFeatures = require('../../utils/apiFeatures')
 
 const getAll = Model => async (req, res, next) => {
 	try {

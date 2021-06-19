@@ -9,9 +9,13 @@ const cors = require('cors');
 
 const userRoutes = require('./routes/userRoutes');
 const voucherRoutes = require('./routes/voucherRoutes')
-const globalErrHandler = require('./controllers/auth/errorController');
+const testRoutes = require('./routes/estoreRoutes')
+
+const globalErrHandler = require('./controllers/error.controller');
 const AppError = require('./utils/appError');
 const app = express();
+
+app.set('view engine', 'ejs')
 
 // Allow Cross-Origin requests
 app.use(cors());
@@ -43,8 +47,9 @@ app.use(hpp());
 
 
 // Routes
-app.use('/api/users', userRoutes)
+app.use('/api/user', userRoutes)
 app.use('/api/voucher', voucherRoutes)
+app.use('/api/test', testRoutes)
 
 // handle undefined Routes
 app.use('*', (req, res, next) => {
