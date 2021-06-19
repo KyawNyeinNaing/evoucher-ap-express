@@ -12,7 +12,6 @@ process.on('uncaughtException', err => {
     process.exit(1)
 })
 
-
 const database = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD)
 
 // Connect the database

@@ -8,6 +8,7 @@ const cors = require('cors');
 
 
 const userRoutes = require('./routes/userRoutes');
+const voucherRoutes = require('./routes/voucherRoutes')
 const globalErrHandler = require('./controllers/auth/errorController');
 const AppError = require('./utils/appError');
 const app = express();
@@ -42,7 +43,8 @@ app.use(hpp());
 
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/api/users', userRoutes)
+app.use('/api/voucher', voucherRoutes)
 
 // handle undefined Routes
 app.use('*', (req, res, next) => {
