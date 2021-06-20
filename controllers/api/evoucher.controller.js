@@ -1,5 +1,5 @@
-const Voucher = require('../../../models/voucher.model')
-const base = require('../base.controller')
+const Voucher = require('../../models/evoucher.model')
+const base = require('./base.controller')
 
 exports.getAllVouchers = base.getAll(Voucher)
 exports.getVoucher = base.getOne(Voucher)

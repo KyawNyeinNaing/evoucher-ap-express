@@ -1,5 +1,5 @@
-const Test = require('../../../models/estore.model')
-const base = require('../base.controller')
+const Test = require('../../models/estore.model')
+const base = require('./base.controller')
 
 exports.getAllTests = base.getAll(Test)
 exports.getTest = base.getOne(Test)

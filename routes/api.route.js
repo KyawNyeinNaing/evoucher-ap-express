@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const userController = require('../controllers/api/auth/userController')
-const authController = require('./../controllers/api/auth/authController')
-const voucherController = require('../controllers/api/evoucher/voucher.controller')
+const userController = require('../controllers/api/auth/user.controller')
+const authController = require('./../controllers/api/auth/auth.controller')
+const voucherController = require('../controllers/api/evoucher.controller')
 
 // user register
 router.post('/user/login', authController.login)
