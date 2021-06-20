@@ -6,10 +6,8 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 
-
-const userRoutes = require('./routes/userRoutes');
-const voucherRoutes = require('./routes/voucherRoutes')
-const testRoutes = require('./routes/estoreRoutes')
+const apiRoutes = require('./routes/api.route')
+const webRoute = require('./routes/web.route')
 
 const globalErrHandler = require('./controllers/error.controller');
 const AppError = require('./utils/appError');
@@ -46,10 +44,11 @@ app.use(xss());
 app.use(hpp());
 
 
-// Routes
-app.use('/api/user', userRoutes)
-app.use('/api/voucher', voucherRoutes)
-app.use('/api/test', testRoutes)
+// Api route
+app.use('/api', apiRoutes)
+
+// Web route
+app.use('/', webRoute)
 
 // handle undefined Routes
 app.use('*', (req, res, next) => {
