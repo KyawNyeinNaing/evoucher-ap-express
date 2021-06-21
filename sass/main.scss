@@ -1,11 +1,10 @@
 body {
-  color: red;
-
-  table {
-    border: 1px solid red;
-  }
-
   main {
     height: 100vh;
+    margin-top: 50px;
+
+    table {
+      border: 1px solid;
+    }
   }
 }

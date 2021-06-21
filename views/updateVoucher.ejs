@@ -1,0 +1,58 @@
+<div class="card">
+	<div class="card-header">
+		<h4 class="font-weight-bold">Update Customer</h4>
+	</div>
+	<div class="card-body">
+		<form action="/voucher/<%= evoucher._id %>" method="post">
+			<div class="row">
+				<div class="col-6">
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="title">Title</label>
+							<input value="<%= evoucher.title %>" type="text" class="form-control" name="title" id="title">
+						</div>
+					</div>
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="expire_date">Expire Date</label>
+							<input value="<%= evoucher.expire_date %>" type="date" class="form-control" name="expire_date" id="expire_date">
+						</div>
+					</div>
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="amount">Amount</label>
+							<input value="<%= evoucher.amount %>" type="text" class="form-control" name="amount" id="amount">
+						</div>
+					</div>
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="payment_method">Payment Method</label>
+							<input value="<%= evoucher.payment_method %>" type="text" class="form-control" name="payment_method" id="payment_method">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6">
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="quantity">Quantity</label>
+							<input value="<%= evoucher.quantity %>" type="number" min="1" class="form-control" name="quantity" id="quantity">
+						</div>
+					</div>
+					<div class="mb-3">
+						<div class="form-group">
+							<label class="col-form-label" for="desc">Description</label>
+							<textarea class="form-control" name="desc" id="desc" cols="30" rows="5">
+								<%= evoucher.desc %>
+							</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-success">Submit</button>
+					<a href="/" class="btn btn-danger">Cancel</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

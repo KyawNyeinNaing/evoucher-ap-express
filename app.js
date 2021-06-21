@@ -20,7 +20,7 @@ app.use(expressEjsLayouts)
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public/style'))
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 
 // scss
 app.use(sassConfig)

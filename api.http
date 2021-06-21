@@ -1,4 +1,21 @@
-@baseUrl = http://localhost:8000
+@hostname = localhost
+@port = 8000
+@host = {{hostname}}:{{port}}
+@contentType = multipart/related; boundary=account_part; type=application/json
+
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwY2VhYjJlMjQxYmVmMmIxMDBiZjNkNSIsImlhdCI6MTYyNDE1NzAzNSwiZXhwIjoxNjI2NzQ5MDM1fQ.F4chBzjqYR5yJG81FS_kCI2-2toCHq41gs0NnZvZEjw
+
 
 ###
-GET {{baseUrl}}/api/ HTTP/1.1
+POST http://{{host}}/api/user/login HTTP/1.1
+Content-Type: {{contentType}}
+Authorization: {{access_token}}
+{
+  "email": "thetpai.tp27@gmail.com",
+  "password": "123456"
+}
+
+###
+GET http://{{host}}/api/user/ HTTP/1.1
+
+
