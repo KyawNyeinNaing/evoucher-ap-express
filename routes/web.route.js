@@ -9,9 +9,9 @@ router.get('/voucher/add', voucherController.getAddVoucherView)
 router.post('/voucher/add', voucherController.upload.single('image'), voucherController.addVoucher)
 
 router.get('/voucher/:id', voucherController.getUpdateVoucherView)
-router.put('/voucher/:id', voucherController.updateVoucher)
+router.post('/voucher/:id', voucherController.updateVoucher)
 router.get('/delete/:id', voucherController.getDeleteVoucherView)
-router.delete('/delete/:id', voucherController.deleteVoucher)
+router.post('/delete/:id', voucherController.deleteVoucher)
 
 // router
 //   .route('/')

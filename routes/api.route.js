@@ -27,7 +27,6 @@ router
 	.put(userController.updateUser)
 	.delete(userController.deleteUser)
 
-
 // eVoucher api
 router
 	.route('/evoucher')
